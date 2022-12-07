@@ -19,7 +19,7 @@ function getCityInfo(event) {
     var cityName = cityNameEl.val().trim();
 
     if (cityName) {
-        apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
+        apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=1&appid=' + apiKey;
 
         console.log('apiUrl: ' + apiUrl);
 
