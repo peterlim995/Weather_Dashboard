@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+    /*background-color: #d9dcd6; */
+    
+}
+
+.forecast {
+    background: #24167c;
+    color: aliceblue;
+}
