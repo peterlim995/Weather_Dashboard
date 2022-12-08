@@ -9,6 +9,7 @@ var citySearchEl = $('#city-search');
 var cityNameEl = $('#city-name');
 var forecastEl = $('#forecast-list');
 var storeBtnListEl = $('#storeBtn');
+var resultEl = $('#result');
 var searchFromButton = false;
 var yesBtn = false;
 
@@ -29,10 +30,6 @@ function storeSearch(data) {
         }
         store.push(data);
     }
-
-    // var addBtn = $('<button id="' + data.name + '">').text(data.name);
-    // addBtn.addClass('btn btn-primary w-100 my-2');
-    // storeBtnListEl.append(addBtn);
    
     setLocalStroage(store);
     showBtn();
@@ -48,31 +45,25 @@ function setLocalStroage(data) {
 }
 
 function showBtn() {
-    storeBtnListEl.empty();
 
+    storeBtnListEl.empty();
+    
     var btn = getLocalstroage();
     console.log("ShowBtn call");
 
     if (btn !== null) {
         for (let i = 0; i < btn.length; i++) {
             var addBtn = $('<button id="' + btn[i].name + '">').text(btn[i].name);
-            addBtn.addClass('btn btn-primary w-100 my-2');
+            addBtn.addClass('btn btn-secondary w-100 my-2');
             storeBtnListEl.append(addBtn);
         }
         var resetBtn = $('<button id="reset">').text("Reset");
-        resetBtn.addClass('btn btn-primary w-100 my-2');
+        resetBtn.addClass('btn btn-dark w-100 my-2');
         storeBtnListEl.append(resetBtn);
         console.log("ShowBtn call inside if");
     }
 
 }
-
-// function resetBtn(yes){
-//     if(yes){
-//         $('reset').removeAttr('hidden');
-//     }
-//     alert("reset button");
-// }
 
 
 function getCityInfo(event) {
@@ -87,7 +78,7 @@ function getCityInfo(event) {
 
         searchFromButton = false;
         yesBtn = true;
-        // resetBtn(yesBtn);
+       
         beginSearch(cityName);
 
         cityNameEl.val('');
@@ -205,7 +196,6 @@ function displayWeather(data) {
 
     $('#today').text(dayjs.unix(data.dt).format('MM/D/YYYY'));
     $('#t-icon').html('<img src="https://openweathermap.org/img/wn/' + data.weather[0].icon + '.png">');
-    // data.weather.icon);
     $('#temp').text(data.main.temp + '°F');
     $('#wind').text(data.wind.speed + 'MPH');
     $('#humidity').text(data.main.humidity + '%');
@@ -220,7 +210,7 @@ function displayForecast(data) {
 
     for (let i = 7; i < data.length; i += 8) {
 
-        var container = $('<div class="forecast border border-dark col-2 m-2 p-2">');
+        var container = $('<div class="forecast border border-dark col-12 col-lg-2 p-2">');
         var date = $('<h5>').text(dayjs.unix(data[i].dt).format('MM/D/YYYY'));
         var icon = $('<img>').attr('src', 'https://openweathermap.org/img/wn/' + data[i].weather[0].icon + '.png');
         var temp = $('<p>').text('Temp: ' + data[i].main.temp + '°F');
