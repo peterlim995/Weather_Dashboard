@@ -9,18 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Title</title>
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
-
+    <!-- Header -->
     <header class="container-fluid bg-dark text-light mb-5 p-3">
 
         <h1 class="text-center">Weather Dashboard</h1>
 
     </header>
+
+    <!-- Main -->
     <main>
+        <!-- Divide two column -->
         <div class="row">
+            <!-- Search Area -->
             <div class="form-group col-12 col-md-3 px-3">
                 <form class="m-3" id="city-search">
                     <h3><label for="city-name">Search for a City:</label></h3>
@@ -30,14 +34,14 @@
                 </form>
                 <div class="m-3" id="storeBtn">
                     <!-- <button id="reset" hidden>Reset</button> -->
-                    
+
                 </div>
             </div>
-
-        
+            <!-- Showing Result -->
             <div class='col-12 col-md-8 px-3' id="result">
+                <!-- Current Weather -->
                 <div class="container-fluid d-flex flex-column border border-dark p-3">
-                    <h2 ><span id="city">City</span> (<span id="today">Today</span>)<span id="t-icon"></span></h2>
+                    <h2><span id="city">City</span> (<span id="today">Today</span>)<span id="t-icon"></span></h2>
                     <p>Temp: <span id="temp"></span></p>
                     <p>Wind: <span id="wind"></span></p>
                     <p>Humidity: <span id="humidity"></span></p>
@@ -45,6 +49,7 @@
                 <div class="container-fluid d-flex my-3">
                     <h3>5-Day Forecast</h3>
                 </div>
+                <!-- 5-Day Forecast -->
                 <div class="row d-flex justify-content-around" id="forecast-list">
                     <div class="forecast border border-dark col-12 col-lg-2 p-2">
                         <h5>Date</h5>
@@ -59,19 +64,22 @@
                         <p>Temp:</p>
                         <p>Wind:</p>
                         <p>Humdity:</p>
-                    </div><div class="forecast border border-dark col-12 col-lg-2 p-2">
+                    </div>
+                    <div class="forecast border border-dark col-12 col-lg-2 p-2">
                         <h5>Date</h5>
                         <p></p>
                         <p>Temp:</p>
                         <p>Wind:</p>
                         <p>Humdity:</p>
-                    </div><div class="forecast border border-dark col-12 col-lg-2 p-2">
+                    </div>
+                    <div class="forecast border border-dark col-12 col-lg-2 p-2">
                         <h5>Date</h5>
                         <p></p>
                         <p>Temp:</p>
                         <p>Wind:</p>
                         <p>Humdity:</p>
-                    </div><div class="forecast border border-dark col-12 col-lg-2 p-2">
+                    </div>
+                    <div class="forecast border border-dark col-12 col-lg-2 p-2">
                         <h5>Date</h5>
                         <p></p>
                         <p>Temp:</p>
@@ -83,14 +91,10 @@
         </div>
     </main>
 
-
-    <!-- CDN example (jsDelivr) -->
-<!-- Link the DayJS library -->
-<script
-src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-crossorigin="anonymous"
-></script>
+    
+    <!-- Link the DayJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+        integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
